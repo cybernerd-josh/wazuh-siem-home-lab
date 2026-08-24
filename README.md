@@ -88,8 +88,7 @@ After the attack, the following was observed in the Wazuh Dashboard:
 agent.name: "DESKTOP-SI9234F" and data.win.system.eventID: 4625
 data.win.system.eventID: 4624
 data.win.system.providerName: "Microsoft-Windows-Sysmon"
-
-
+```
 #Screenshots
 -Wazuh Dashboard – Agent Active
 -Sysmon events in Discover / Threat Hunting
@@ -100,12 +99,13 @@ data.win.system.providerName: "Microsoft-Windows-Sysmon"
 
 Challenges Faced & Solutions
 
-Challenges                                                      Solutions
 
-Agent showing as Stopped                        Fixed ossec.conf (invalid manager IP)
-Sysmon events not appearing                     Enabled archives in Filebeat + correct localfile configuration
-Agent connection issues                         Re-registered agent and cleaned duplicate entries
-Large Sysmon messages dropped                   Icreased queue_size and max_size in manager config
+|Challenges                           |            Solutions                              |
+-------------------------------------------------------------------------------------------
+Agent showing as Stopped              |           Fixed ossec.conf (invalid manager IP)
+Sysmon events not appearing           |          Enabled archives in Filebeat + correct localfile configuration
+Agent connection issues               |         Re-registered agent and cleaned duplicate entries
+Large Sysmon messages dropped         |         Icreased queue_size and max_size in manager config
 
 
 
@@ -144,6 +144,7 @@ Alli Olamide Joshua
 Aspiring SOC Analyst
 GitHub: Cybernerd-josh
 LinkedIn: [ LinkedIn]
+
 
 
 Disclaimer
