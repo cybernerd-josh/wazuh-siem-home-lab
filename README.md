@@ -89,66 +89,67 @@ agent.name: "DESKTOP-SI9234F" and data.win.system.eventID: 4625
 data.win.system.eventID: 4624
 data.win.system.providerName: "Microsoft-Windows-Sysmon"
 ```
-#Screenshots
--Wazuh Dashboard – Agent Active
--Sysmon events in Discover / Threat Hunting
--Failed RDP logon alerts (Event ID 4625)
--Successful RDP logon after brute force
--Kali Linux attack terminal
+## Screenshots
 
+- Wazuh Dashboard – Agent Active  
+- Sysmon events in Discover / Threat Hunting  
+- Failed RDP logon alerts (Event ID 4625)  
+- Successful RDP logon after brute force  
+- Kali Linux attack terminal  
 
-Challenges Faced & Solutions
+---
 
+## Challenges Faced & Solutions
 
-|Challenges                           |            Solutions                              |
--------------------------------------------------------------------------------------------
-Agent showing as Stopped              |           Fixed ossec.conf (invalid manager IP)
-Sysmon events not appearing           |          Enabled archives in Filebeat + correct localfile configuration
-Agent connection issues               |         Re-registered agent and cleaned duplicate entries
-Large Sysmon messages dropped         |         Icreased queue_size and max_size in manager config
+| Challenge                          | Solution                                              |
+|------------------------------------|-------------------------------------------------------|
+| Agent showing as Stopped           | Fixed `ossec.conf` (invalid manager IP)               |
+| Sysmon events not appearing        | Enabled archives in Filebeat + correct `localfile` configuration |
+| Agent connection issues            | Re-registered agent and cleaned duplicate entries     |
+| Large Sysmon messages dropped      | Increased `queue_size` and `max_size` in manager config |
 
+---
 
+## Lessons Learned
 
-#Lessons Learned
+- Proper agent configuration and Sysmon integration are critical for rich telemetry.
+- Default Wazuh rules can detect RDP brute force, but custom rules can improve detection quality.
+- Enabling archives helps with visibility during lab environments.
+- Network connectivity and firewall rules on the VPS must be carefully managed.
+- Documenting every step (including troubleshooting) is extremely valuable for learning.
 
--Proper agent configuration and Sysmon integration are critical for rich telemetry.
--Default Wazuh rules can detect RDP brute force, but custom rules can improve detection quality.
--Enabling archives helps with visibility during lab environments.
--Network connectivity and firewall rules on the VPS must be carefully managed.
--Documenting every step (including troubleshooting) is extremely valuable for learning.
+---
 
+## Recommendations (Defensive)
 
-#Recommendations (Defensive)
+- Disable RDP if not needed, or restrict it by IP.
+- Enforce strong passwords + account lockout policies.
+- Enable Network Level Authentication (NLA).
+- Monitor Event ID 4625 aggressively.
+- Use fail2ban or similar solutions on exposed services.
+- Deploy Sysmon on all Windows endpoints in a real environment.
 
--Disable RDP if not needed, or restrict it by IP
--Enforce strong passwords + account lockout policies
--Enable Network Level Authentication (NLA)
--Monitor Event ID 4625 aggressively
--Use fail2ban or similar solutions on exposed services
--Deploy Sysmon on all Windows endpoints in a real environment
+---
 
+## Future Improvements
 
-Future Improvements
+- Create custom Wazuh rules for RDP brute force.
+- Add more endpoints (Linux + Windows).
+- Simulate additional attacks (pass-the-hash, lateral movement, malware execution).
+- Integrate VirusTotal.
+- Build dashboards specific to authentication attacks.
+- Write detection rules mapped to MITRE ATT&CK.
 
--Create custom Wazuh rules for RDP brute force
--Add more endpoints (Linux + Windows)
--Simulate additional attacks (pass-the-hash, lateral movement, malware execution)
--Integrate VirusTotal
--Build dashboards specific to authentication attacks
--Write detection rules mapped to MITRE ATT&CK
+---
 
+## Author
 
+**Alli Olamide Joshua**  
+Aspiring SOC Analyst  
 
-Author
-Alli Olamide Joshua
-Aspiring SOC Analyst
-GitHub: Cybernerd-josh
-LinkedIn: [ LinkedIn]
+- GitHub: [Cybernerd-josh](https://github.com/Cybernerd-josh)  
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/) *(update with your actual profile link
 
-
-
-Disclaimer
-This project was conducted in a controlled home lab environment for educational purposes only. All attacks were performed against systems I own.
 
 
 
