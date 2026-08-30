@@ -91,7 +91,7 @@ data.win.system.providerName: "Microsoft-Windows-Sysmon"
 ```
 ## Screenshots
 
-![Wazuh Dashboard – Agent Active](images/)  
+![Wazuh Dashboard – Agent Active](images/active-agent.jpg)  
 - Sysmon events in Discover / Threat Hunting  
 - Failed RDP logon alerts (Event ID 4625)  
 - Successful RDP logon after brute force  
