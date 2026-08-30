@@ -148,7 +148,7 @@ data.win.system.providerName: "Microsoft-Windows-Sysmon"
 Aspiring SOC Analyst  
 
 - GitHub: [Cybernerd-josh](https://github.com/Cybernerd-josh)  
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/) *(update with your actual profile link
+- LinkedIn: [LinkedIn](www.linkedin.com/in/alli-olamide-61359b383)
 
 
 
